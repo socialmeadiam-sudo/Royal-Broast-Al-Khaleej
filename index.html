@@ -1,0 +1,1577 @@
+﻿﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, user-scalable=yes">
+  <title>Royal Broast Al Khaleej | Authentic Broast & Fast Food in North Nazimabad, Karachi</title>
+  <meta name="description" content="Royal Broast Al Khaleej in Block H, North Nazimabad Town, Karachi, serving delicious broast, burgers, and fast food. Explore the menu and contact us for ordering and location details.">
+  <meta name="keywords" content="Royal Broast Al Khaleej, Broast Karachi, North Nazimabad, Block H, Pakistani Broast, Fried Chicken Karachi, Fast Food Karachi">
+  <!-- Open Graph -->
+  <meta property="og:title" content="Royal Broast Al Khaleej | Authentic Broast & Fast Food in North Nazimabad, Karachi">
+  <meta property="og:description" content="Delicious broast, burgers, and fast food in Block H, North Nazimabad Town, Karachi. Contact us for menu and ordering.">
+  <meta property="og:type" content="restaurant">
+  <meta property="og:locale" content="en_PK">
+  <!-- Font Awesome for icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700;800&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    /* ============ RESET & VARIABLES ============ */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    :root {
+      --bg-deep: #0a0a0a;
+      --bg-dark: #141414;
+      --bg-card: #1c1c1c;
+      --bg-card-hover: #242424;
+      --bg-elevated: #1a1a1a;
+      --gold: #d4af37;
+      --gold-light: #e8c96a;
+      --gold-dark: #a8841f;
+      --gold-glow: rgba(212, 175, 55, 0.35);
+      --crimson: #8b1e2b;
+      --crimson-light: #b22a3a;
+      --cream: #f5ede0;
+      --white: #ffffff;
+      --text-main: #f5f5f0;
+      --text-muted: #a8a8a0;
+      --text-dim: #6b6b63;
+      --border: rgba(212, 175, 55, 0.15);
+      --border-active: rgba(212, 175, 55, 0.5);
+      --whatsapp: #25d366;
+      --shadow-sm: 0 4px 16px rgba(0, 0, 0, 0.5);
+      --shadow-md: 0 12px 32px rgba(0, 0, 0, 0.6);
+      --shadow-lg: 0 24px 60px rgba(0, 0, 0, 0.7);
+      --shadow-gold: 0 12px 40px rgba(212, 175, 55, 0.2);
+      --radius: 18px;
+      --radius-sm: 12px;
+      --radius-lg: 28px;
+      --transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+      --font-heading: 'Playfair Display', Georgia, serif;
+      --font-body: 'Inter', system-ui, sans-serif;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-deep);
+      color: var(--text-main);
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; height: auto; display: block; }
+    a { text-decoration: none; color: inherit; }
+    ul { list-style: none; }
+    button, .btn { cursor: pointer; border: none; font-family: inherit; transition: var(--transition); }
+    .container { width: 100%; max-width: 1280px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 90px 0; }
+
+    /* ============ ANIMATIONS ============ */
+    @keyframes fadeInUp { from { opacity: 0; transform: translateY(40px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-14px); } }
+    @keyframes pulse-gold { 0%, 100% { box-shadow: 0 0 0 0 var(--gold-glow); } 50% { box-shadow: 0 0 30px 8px var(--gold-glow); } }
+    @keyframes pulse-whatsapp { 0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.6); } 70% { box-shadow: 0 0 0 20px rgba(37, 211, 102, 0); } 100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); } }
+    @keyframes shimmer { 0% { background-position: -200% center; } 100% { background-position: 200% center; } }
+    @keyframes spin-slow { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }
+    .reveal { opacity: 0; transform: translateY(40px); transition: opacity 0.9s cubic-bezier(0.4, 0, 0.2, 1), transform 0.9s cubic-bezier(0.4, 0, 0.2, 1); }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    /* ============ BUTTONS ============ */
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      padding: 15px 32px; border-radius: 60px;
+      font-family: var(--font-body); font-weight: 600; font-size: 0.95rem;
+      letter-spacing: 0.3px; transition: var(--transition);
+      border: 2px solid transparent; position: relative; overflow: hidden;
+    }
+    .btn::before {
+      content: ''; position: absolute; top: 0; left: -100%; width: 100%; height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+      transition: left 0.6s ease;
+    }
+    .btn:hover::before { left: 100%; }
+    .btn-primary {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-deep);
+      box-shadow: 0 8px 24px rgba(212, 175, 55, 0.3);
+      font-weight: 700;
+    }
+    .btn-primary:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(212, 175, 55, 0.45); }
+    .btn-outline {
+      background: transparent; border: 2px solid var(--gold);
+      color: var(--gold);
+    }
+    .btn-outline:hover { background: var(--gold); color: var(--bg-deep); transform: translateY(-3px); }
+    .btn-whatsapp {
+      background: linear-gradient(135deg, #25d366, #1eb854);
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(37, 211, 102, 0.3);
+    }
+    .btn-whatsapp:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(37, 211, 102, 0.45); }
+    .btn-crimson {
+      background: linear-gradient(135deg, var(--crimson), #6b1e2b);
+      color: var(--white);
+      box-shadow: 0 8px 24px rgba(139, 30, 43, 0.35);
+    }
+    .btn-crimson:hover { transform: translateY(-3px); box-shadow: 0 14px 36px rgba(139, 30, 43, 0.5); }
+    .btn-sm { padding: 11px 22px; font-size: 0.86rem; }
+    .btn-block { width: 100%; }
+
+    /* ============ SECTION HEADERS ============ */
+    .section-header { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+    .section-label {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 8px 20px; background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.25); color: var(--gold);
+      border-radius: 60px; font-size: 0.72rem; font-weight: 700;
+      letter-spacing: 2.5px; text-transform: uppercase;
+      margin-bottom: 20px;
+    }
+    .section-title {
+      font-family: var(--font-heading); font-size: 2.8rem; font-weight: 700;
+      color: var(--white); margin-bottom: 16px; letter-spacing: -0.5px; line-height: 1.15;
+    }
+    .section-title .gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    .section-subtitle { font-size: 1.05rem; color: var(--text-muted); line-height: 1.7; }
+
+    /* ============ NAVBAR ============ */
+    .navbar {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 1000;
+      background: rgba(10, 10, 10, 0.75);
+      backdrop-filter: blur(20px); -webkit-backdrop-filter: blur(20px);
+      border-bottom: 1px solid transparent;
+      transition: var(--transition); padding: 18px 0;
+    }
+    .navbar.scrolled {
+      padding: 10px 0;
+      background: rgba(10, 10, 10, 0.96);
+      border-bottom-color: var(--border);
+      box-shadow: 0 4px 30px rgba(0, 0, 0, 0.7);
+    }
+    .navbar .container { display: flex; align-items: center; justify-content: space-between; }
+    .logo {
+      font-family: var(--font-heading); font-size: 1.55rem; font-weight: 700;
+      color: var(--white); display: flex; align-items: center; gap: 12px; letter-spacing: -0.3px;
+    }
+    .logo-icon {
+      width: 44px; height: 44px; border-radius: 12px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bg-deep); font-size: 1.2rem;
+      box-shadow: var(--shadow-gold); flex-shrink: 0;
+      animation: pulse-gold 3.5s infinite;
+    }
+    .logo-text { display: flex; flex-direction: column; line-height: 1.1; }
+    .logo-text .main { font-size: 1.25rem; font-weight: 700; }
+    .logo-text .sub { font-size: 0.6rem; font-weight: 600; color: var(--gold); letter-spacing: 3px; text-transform: uppercase; font-family: var(--font-body); }
+    .nav-links { display: flex; align-items: center; gap: 32px; }
+    .nav-links a {
+      font-weight: 500; font-size: 0.9rem; color: var(--text-muted);
+      position: relative; padding: 5px 0; transition: var(--transition);
+      letter-spacing: 0.5px;
+    }
+    .nav-links a::after {
+      content: ''; position: absolute; bottom: -2px; left: 50%; transform: translateX(-50%);
+      width: 0; height: 2px; background: var(--gold);
+      transition: var(--transition); border-radius: 2px;
+    }
+    .nav-links a:hover, .nav-links a.active { color: var(--white); }
+    .nav-links a:hover::after, .nav-links a.active::after { width: 100%; }
+    .nav-cta { display: flex; align-items: center; gap: 14px; }
+    .hamburger {
+      display: none; font-size: 1.5rem; color: var(--gold);
+      background: none; padding: 8px; border-radius: 10px;
+      border: 1px solid var(--border);
+    }
+    .hamburger:hover { border-color: var(--gold); }
+
+    /* Mobile menu */
+    .mobile-menu {
+      position: fixed; top: 0; right: -100%; width: 85%; max-width: 380px;
+      height: 100vh; background: var(--bg-dark); z-index: 2000;
+      padding: 100px 32px 32px;
+      box-shadow: -20px 0 60px rgba(0, 0, 0, 0.8);
+      transition: right 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+      display: flex; flex-direction: column; gap: 8px;
+      overflow-y: auto; border-left: 1px solid var(--border);
+    }
+    .mobile-menu.open { right: 0; }
+    .mobile-menu a {
+      font-size: 1.05rem; font-weight: 500; color: var(--text-main);
+      padding: 16px 0; border-bottom: 1px solid rgba(255,255,255,0.06);
+      transition: var(--transition); display: flex; align-items: center; gap: 12px;
+    }
+    .mobile-menu a i { color: var(--gold); font-size: 0.95rem; width: 20px; }
+    .mobile-menu a:hover { color: var(--gold); padding-left: 8px; }
+    .mobile-menu .btn { width: 100%; margin-top: 20px; }
+    .close-menu {
+      position: absolute; top: 24px; right: 24px;
+      font-size: 1.5rem; background: rgba(212, 175, 55, 0.1);
+      color: var(--gold); width: 42px; height: 42px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border);
+    }
+    .close-menu:hover { background: var(--gold); color: var(--bg-deep); }
+    .overlay {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.7); backdrop-filter: blur(4px);
+      z-index: 1500; opacity: 0; visibility: hidden; transition: var(--transition);
+    }
+    .overlay.active { opacity: 1; visibility: visible; }
+
+    /* ============ HERO ============ */
+    .hero {
+      padding: 160px 0 100px; position: relative; overflow: hidden;
+      background: radial-gradient(ellipse at 20% 20%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
+                  radial-gradient(ellipse at 80% 80%, rgba(139, 30, 43, 0.1) 0%, transparent 50%),
+                  var(--bg-deep);
+      min-height: 100vh; display: flex; align-items: center;
+    }
+    .hero::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(212, 175, 55, 0.06) 1px, transparent 0);
+      background-size: 50px 50px; pointer-events: none;
+    }
+    .hero .container {
+      display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 70px;
+      align-items: center; position: relative; z-index: 2;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 20px; background: rgba(212, 175, 55, 0.08);
+      border: 1px solid rgba(212, 175, 55, 0.3); color: var(--gold);
+      border-radius: 60px; font-size: 0.78rem; font-weight: 600;
+      letter-spacing: 1px; margin-bottom: 26px; text-transform: uppercase;
+    }
+    .hero-content h1 {
+      font-family: var(--font-heading); font-size: 3.8rem; font-weight: 700;
+      color: var(--white); line-height: 1.1; margin-bottom: 24px; letter-spacing: -1.5px;
+    }
+    .hero-content h1 .gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-light) 50%, var(--gold) 100%);
+      background-size: 200% auto;
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      animation: shimmer 4s linear infinite;
+    }
+    .hero-content p {
+      font-size: 1.12rem; color: var(--text-muted); margin-bottom: 36px; max-width: 540px;
+    }
+    .hero-buttons { display: flex; flex-wrap: wrap; gap: 16px; margin-bottom: 40px; }
+    .trust-indicators { display: flex; flex-wrap: wrap; gap: 26px; padding-top: 30px; border-top: 1px solid var(--border); }
+    .trust-item { display: flex; align-items: center; gap: 10px; font-size: 0.88rem; color: var(--text-muted); font-weight: 500; }
+    .trust-item i { color: var(--gold); font-size: 1.1rem; }
+    .hero-image {
+      position: relative; border-radius: var(--radius-lg); overflow: hidden;
+      box-shadow: var(--shadow-lg); aspect-ratio: 4/5;
+    }
+    .hero-image::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg);
+      margin: 14px; pointer-events: none;
+    }
+    .hero-image img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.8s ease; }
+    .hero-image:hover img { transform: scale(1.05); }
+    .float-badge {
+      position: absolute; background: rgba(20, 20, 20, 0.95);
+      backdrop-filter: blur(12px); border: 1px solid var(--border-active);
+      border-radius: 16px; padding: 14px 18px; box-shadow: var(--shadow-md);
+      display: flex; align-items: center; gap: 12px; z-index: 5;
+    }
+    .float-badge-1 { top: 30px; left: -30px; animation: float 5s ease-in-out infinite; }
+    .float-badge-2 { bottom: 40px; right: -30px; animation: float 5s ease-in-out infinite; animation-delay: 1.2s; }
+    .fb-icon {
+      width: 42px; height: 42px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.1rem; flex-shrink: 0;
+    }
+    .fb-icon.gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); color: var(--bg-deep); }
+    .fb-icon.crimson { background: linear-gradient(135deg, var(--crimson), #6b1e2b); color: var(--white); }
+    .fb-text .fb-label { font-size: 0.68rem; color: var(--text-dim); font-weight: 600; text-transform: uppercase; letter-spacing: 1px; }
+    .fb-text .fb-value { font-size: 0.9rem; font-weight: 700; color: var(--white); font-family: var(--font-heading); }
+
+    /* ============ ABOUT ============ */
+    .about { background: var(--bg-dark); }
+    .about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .about-image {
+      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3; position: relative;
+    }
+    .about-image::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg);
+      margin: 14px; pointer-events: none;
+    }
+    .about-image img { width: 100%; height: 100%; object-fit: cover; }
+    .about-text h2 {
+      font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 22px; letter-spacing: -0.5px;
+    }
+    .about-text h2 .gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .about-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.02rem; line-height: 1.75; }
+
+    /* ============ SIGNATURE ============ */
+    .signature { background: var(--bg-deep); }
+    .signature-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .signature-image {
+      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3; position: relative; order: 2;
+    }
+    .signature-image::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg);
+      margin: 14px; pointer-events: none;
+    }
+    .signature-image img { width: 100%; height: 100%; object-fit: cover; }
+    .signature-content h2 {
+      font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 20px; letter-spacing: -0.5px;
+    }
+    .signature-content h2 .gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .signature-content ul { margin: 26px 0 34px; }
+    .signature-content ul li {
+      display: flex; align-items: center; gap: 14px; margin-bottom: 16px;
+      font-size: 1rem; color: var(--text-main);
+    }
+    .signature-content ul li .check-icon {
+      width: 26px; height: 26px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      display: flex; align-items: center; justify-content: center;
+      color: var(--bg-deep); font-size: 0.7rem; flex-shrink: 0;
+    }
+
+    /* ============ MENU - REDESIGNED CARDS ============ */
+    .menu { background: var(--bg-dark); }
+    .menu-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .menu-card {
+      position: relative; background: var(--bg-card); border-radius: var(--radius);
+      overflow: hidden; box-shadow: var(--shadow-sm); transition: var(--transition);
+      border: 1px solid var(--border); display: flex; flex-direction: column;
+    }
+    .menu-card:hover {
+      transform: translateY(-10px); box-shadow: var(--shadow-lg);
+      border-color: var(--border-active);
+    }
+    .menu-card-img { aspect-ratio: 4/3; overflow: hidden; position: relative; }
+    .menu-card-img img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.7s ease; }
+    .menu-card:hover .menu-card-img img { transform: scale(1.08); }
+    .menu-card-img::after {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(to top, rgba(10, 10, 10, 0.85), transparent 55%);
+    }
+    .menu-card-badge {
+      position: absolute; top: 16px; left: 16px; z-index: 3;
+      background: rgba(10, 10, 10, 0.85); backdrop-filter: blur(8px);
+      padding: 7px 16px; border-radius: 60px; font-size: 0.68rem;
+      font-weight: 700; color: var(--gold); letter-spacing: 1.5px;
+      text-transform: uppercase; border: 1px solid var(--border-active);
+    }
+    .menu-card-icon {
+      position: absolute; bottom: -26px; right: 22px; z-index: 4;
+      width: 56px; height: 56px; border-radius: 16px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-deep); display: flex; align-items: center; justify-content: center;
+      font-size: 1.4rem; box-shadow: var(--shadow-gold);
+      transition: var(--transition);
+    }
+    .menu-card:hover .menu-card-icon { transform: scale(1.12) rotate(-8deg); }
+    .menu-card-body { padding: 34px 24px 26px; flex: 1; display: flex; flex-direction: column; }
+    .menu-card-body h3 {
+      font-family: var(--font-heading); font-size: 1.4rem; color: var(--white);
+      margin-bottom: 10px; letter-spacing: -0.3px;
+    }
+    .menu-card-body p { color: var(--text-muted); margin-bottom: 14px; flex: 1; font-size: 0.92rem; }
+    .price-tag {
+      font-size: 0.85rem; color: var(--gold); font-weight: 600;
+      margin-bottom: 18px; display: flex; align-items: center; gap: 8px;
+      letter-spacing: 0.5px;
+    }
+    .price-tag i { font-size: 0.75rem; }
+
+    /* ============ WHY US - REDESIGNED ============ */
+    .why-us { background: var(--bg-deep); }
+    .features-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 26px; }
+    .feature-card {
+      position: relative; background: var(--bg-card); padding: 42px 28px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      transition: var(--transition); overflow: hidden; text-align: center;
+    }
+    .feature-card::before {
+      content: ''; position: absolute; top: 0; left: 50%; transform: translateX(-50%);
+      width: 60px; height: 4px;
+      background: linear-gradient(90deg, var(--gold), var(--gold-light));
+      border-radius: 0 0 6px 6px; transition: width 0.4s ease;
+    }
+    .feature-card:hover::before { width: 100%; }
+    .feature-card:hover {
+      transform: translateY(-8px); box-shadow: var(--shadow-lg);
+      border-color: var(--border-active); background: var(--bg-card-hover);
+    }
+    .feature-icon {
+      width: 68px; height: 68px; margin: 0 auto 24px;
+      border-radius: 20px; background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 30, 43, 0.1));
+      border: 1px solid var(--border-active);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.7rem; transition: var(--transition);
+    }
+    .feature-card:hover .feature-icon {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-deep); transform: scale(1.12) rotate(-6deg);
+      box-shadow: var(--shadow-gold);
+    }
+    .feature-card h3 {
+      font-family: var(--font-heading); font-size: 1.2rem; margin-bottom: 12px;
+      color: var(--white); letter-spacing: -0.2px;
+    }
+    .feature-card p { color: var(--text-muted); font-size: 0.9rem; line-height: 1.65; }
+
+    /* ============ HOW IT WORKS ============ */
+    .how-it-works { background: var(--bg-dark); }
+    .steps-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 30px; }
+    .step-card {
+      position: relative; background: var(--bg-card); padding: 44px 28px 34px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      transition: var(--transition); text-align: center; overflow: hidden;
+    }
+    .step-card:hover {
+      transform: translateY(-8px); box-shadow: var(--shadow-lg);
+      border-color: var(--border-active);
+    }
+    .step-number {
+      font-family: var(--font-heading); font-size: 3.5rem; font-weight: 800;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+      line-height: 1; margin-bottom: 18px; opacity: 0.6;
+    }
+    .step-card h3 {
+      font-family: var(--font-heading); font-size: 1.4rem; color: var(--white);
+      margin-bottom: 12px; letter-spacing: -0.2px;
+    }
+    .step-card p { color: var(--text-muted); font-size: 0.92rem; }
+
+    /* ============ GALLERY ============ */
+    .gallery { background: var(--bg-deep); }
+    .gallery-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .gallery-item {
+      position: relative; border-radius: var(--radius-sm); overflow: hidden;
+      aspect-ratio: 1/1; cursor: pointer; box-shadow: var(--shadow-sm);
+      transition: var(--transition); border: 1px solid var(--border);
+    }
+    .gallery-item:hover {
+      transform: scale(1.02); box-shadow: var(--shadow-gold);
+      border-color: var(--border-active);
+    }
+    .gallery-item img { width: 100%; height: 100%; object-fit: cover; transition: var(--transition); }
+    .gallery-item:hover img { transform: scale(1.08); }
+    .gallery-item::after {
+      content: '\f00e'; font-family: 'Font Awesome 6 Free'; font-weight: 900;
+      position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+      background: rgba(10, 10, 10, 0.6); color: var(--gold); font-size: 1.8rem;
+      opacity: 0; transition: var(--transition);
+    }
+    .gallery-item:hover::after { opacity: 1; }
+    .lightbox {
+      position: fixed; top: 0; left: 0; width: 100%; height: 100%;
+      background: rgba(0, 0, 0, 0.95); backdrop-filter: blur(8px);
+      z-index: 3000; display: none; align-items: center; justify-content: center; padding: 40px;
+    }
+    .lightbox.active { display: flex; }
+    .lightbox img {
+      max-width: 90%; max-height: 90%; border-radius: var(--radius);
+      box-shadow: 0 30px 80px rgba(0, 0, 0, 0.8);
+      border: 1px solid var(--border-active);
+    }
+    .lightbox-close {
+      position: absolute; top: 30px; right: 40px; font-size: 2rem;
+      color: var(--gold); background: rgba(212, 175, 55, 0.1);
+      width: 48px; height: 48px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      border: 1px solid var(--border-active);
+    }
+    .lightbox-close:hover { background: var(--gold); color: var(--bg-deep); }
+
+    /* ============ EXPERIENCE ============ */
+    .experience { background: var(--bg-dark); }
+    .experience-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 70px; align-items: center; }
+    .experience-image {
+      border-radius: var(--radius-lg); overflow: hidden; box-shadow: var(--shadow-lg);
+      aspect-ratio: 4/3; position: relative;
+    }
+    .experience-image::after {
+      content: ''; position: absolute; inset: 0;
+      border: 1px solid rgba(212, 175, 55, 0.3); border-radius: var(--radius-lg);
+      margin: 14px; pointer-events: none;
+    }
+    .experience-image img { width: 100%; height: 100%; object-fit: cover; }
+    .experience-text h2 {
+      font-family: var(--font-heading); font-size: 2.6rem; font-weight: 700;
+      color: var(--white); margin-bottom: 22px; letter-spacing: -0.5px;
+    }
+    .experience-text h2 .gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .experience-text p { margin-bottom: 20px; color: var(--text-muted); font-size: 1.02rem; line-height: 1.75; }
+
+    /* ============ LOCATION ============ */
+    .location { background: var(--bg-deep); }
+    .location-card {
+      background: linear-gradient(135deg, var(--bg-card) 0%, var(--bg-elevated) 100%);
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-lg);
+      padding: 60px 56px; display: flex; flex-wrap: wrap;
+      align-items: center; justify-content: space-between; gap: 40px;
+      border: 1px solid var(--border-active); position: relative; overflow: hidden;
+    }
+    .location-card::before {
+      content: ''; position: absolute; top: -50%; right: -10%;
+      width: 400px; height: 400px;
+      background: radial-gradient(circle, rgba(212, 175, 55, 0.12), transparent 70%);
+      border-radius: 50%; pointer-events: none;
+    }
+    .location-info h2 {
+      font-family: var(--font-heading); font-size: 2.2rem; color: var(--white);
+      margin-bottom: 12px; display: flex; align-items: center; gap: 12px;
+      letter-spacing: -0.3px; position: relative; z-index: 2;
+    }
+    .location-info h2 i { color: var(--gold); font-size: 1.6rem; }
+    .location-info p {
+      font-size: 1.08rem; color: var(--text-muted);
+      position: relative; z-index: 2; max-width: 480px;
+    }
+    .location-card .btn { position: relative; z-index: 2; }
+
+    /* ============ CONTACT (NO IMAGES) ============ */
+    .contact { background: var(--bg-dark); }
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 50px; }
+    .contact-info-item {
+      display: flex; align-items: flex-start; gap: 18px;
+      margin-bottom: 26px; padding: 22px;
+      background: var(--bg-card); border-radius: var(--radius-sm);
+      border: 1px solid var(--border); transition: var(--transition);
+    }
+    .contact-info-item:hover { border-color: var(--border-active); transform: translateX(6px); }
+    .contact-icon {
+      width: 52px; height: 52px; border-radius: 16px;
+      background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(139, 30, 43, 0.1));
+      border: 1px solid var(--border-active);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 1.3rem; flex-shrink: 0;
+    }
+    .contact-info-item h4 {
+      font-family: var(--font-heading); font-size: 1.1rem;
+      margin-bottom: 4px; color: var(--white); letter-spacing: -0.2px;
+    }
+    .contact-info-item a, .contact-info-item p {
+      color: var(--text-muted); font-weight: 500;
+      word-break: break-word; font-size: 0.95rem; transition: var(--transition);
+    }
+    .contact-info-item a:hover { color: var(--gold); }
+    .contact-form {
+      background: var(--bg-card); padding: 44px 40px;
+      border-radius: var(--radius-lg); box-shadow: var(--shadow-md);
+      border: 1px solid var(--border); position: relative; overflow: hidden;
+    }
+    .contact-form::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 5px;
+      background: linear-gradient(90deg, var(--gold), var(--crimson), var(--gold));
+    }
+    .contact-form h3 {
+      font-family: var(--font-heading); font-size: 1.6rem; color: var(--white);
+      margin-bottom: 26px; letter-spacing: -0.2px;
+    }
+    .form-group { margin-bottom: 20px; }
+    .form-group label {
+      display: block; font-weight: 600; margin-bottom: 8px;
+      font-size: 0.82rem; color: var(--text-muted);
+      text-transform: uppercase; letter-spacing: 1px;
+    }
+    .form-group input, .form-group textarea {
+      width: 100%; padding: 15px 18px;
+      background: var(--bg-dark); border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm); font-family: inherit;
+      font-size: 0.95rem; color: var(--text-main);
+      transition: var(--transition); outline: none;
+    }
+    .form-group input::placeholder, .form-group textarea::placeholder { color: var(--text-dim); }
+    .form-group input:focus, .form-group textarea:focus {
+      border-color: var(--gold); box-shadow: 0 0 0 4px rgba(212, 175, 55, 0.1);
+      background: var(--bg-elevated);
+    }
+    .form-group textarea { resize: vertical; min-height: 120px; }
+
+    /* ============ FAQ ============ */
+    .faq { background: var(--bg-deep); }
+    .faq-list { max-width: 860px; margin: 0 auto; }
+    .faq-item {
+      background: var(--bg-card); border-radius: var(--radius-sm);
+      margin-bottom: 14px; box-shadow: var(--shadow-sm);
+      overflow: hidden; border: 1px solid var(--border); transition: var(--transition);
+    }
+    .faq-item.open { border-color: var(--border-active); box-shadow: var(--shadow-gold); }
+    .faq-question {
+      width: 100%; text-align: left; padding: 24px 28px;
+      font-size: 1.02rem; font-weight: 600; color: var(--white);
+      background: none; display: flex; justify-content: space-between;
+      align-items: center; transition: var(--transition); gap: 16px;
+      font-family: var(--font-heading); letter-spacing: -0.1px;
+    }
+    .faq-question:hover { color: var(--gold); }
+    .faq-icon {
+      width: 32px; height: 32px; border-radius: 50%;
+      background: rgba(212, 175, 55, 0.1); border: 1px solid var(--border-active);
+      display: flex; align-items: center; justify-content: center;
+      color: var(--gold); font-size: 0.8rem; flex-shrink: 0;
+      transition: var(--transition);
+    }
+    .faq-question.active .faq-icon {
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-deep); transform: rotate(180deg);
+    }
+    .faq-answer {
+      max-height: 0; overflow: hidden;
+      transition: max-height 0.4s ease, padding 0.3s ease;
+      padding: 0 28px; color: var(--text-muted);
+      border-top: 1px solid transparent;
+    }
+    .faq-answer.show { max-height: 320px; padding: 0 28px 24px; border-top-color: var(--border); }
+    .faq-answer p { padding-top: 20px; line-height: 1.75; font-size: 0.95rem; }
+
+    /* ============ TESTIMONIALS ============ */
+    .testimonials { background: var(--bg-dark); }
+    .testimonials-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 28px; }
+    .testimonial-card {
+      position: relative; background: var(--bg-card); padding: 44px 32px 32px;
+      border-radius: var(--radius); border: 1px solid var(--border);
+      transition: var(--transition); overflow: hidden;
+    }
+    .testimonial-card::before {
+      content: '\201C'; position: absolute; top: 10px; left: 24px;
+      font-family: var(--font-heading); font-size: 5rem; line-height: 1;
+      color: rgba(212, 175, 55, 0.15);
+    }
+    .testimonial-card:hover {
+      transform: translateY(-6px); box-shadow: var(--shadow-lg);
+      border-color: var(--border-active);
+    }
+    .testimonial-stars { display: flex; gap: 4px; margin-bottom: 16px; position: relative; z-index: 2; }
+    .testimonial-stars i { color: var(--gold); font-size: 0.85rem; }
+    .testimonial-card p {
+      color: var(--text-main); font-size: 1rem; line-height: 1.7;
+      font-style: italic; position: relative; z-index: 2;
+    }
+
+    /* ============ FINAL CTA ============ */
+    .final-cta {
+      background: linear-gradient(135deg, var(--crimson) 0%, #4e141e 50%, var(--bg-deep) 100%);
+      text-align: center; padding: 100px 0; position: relative; overflow: hidden;
+    }
+    .final-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background-image: radial-gradient(rgba(212, 175, 55, 0.08) 1px, transparent 0);
+      background-size: 40px 40px; pointer-events: none;
+    }
+    .final-cta h2 {
+      font-family: var(--font-heading); font-size: 2.8rem; color: var(--white);
+      margin-bottom: 18px; position: relative; z-index: 2; letter-spacing: -0.5px;
+    }
+    .final-cta h2 .gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .final-cta p {
+      font-size: 1.1rem; max-width: 640px; margin: 0 auto 40px;
+      color: rgba(255, 255, 255, 0.85); position: relative; z-index: 2;
+    }
+    .final-cta .btn-group {
+      display: flex; flex-wrap: wrap; justify-content: center;
+      gap: 18px; position: relative; z-index: 2;
+    }
+
+    /* ============ FOOTER ============ */
+    footer {
+      background: #050505; color: var(--text-muted);
+      padding: 70px 0 0; border-top: 1px solid var(--border);
+      position: relative;
+    }
+    footer::before {
+      content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+      background: linear-gradient(90deg, var(--gold), var(--crimson), var(--gold));
+    }
+    .footer-grid {
+      display: grid; grid-template-columns: 2fr 1fr 1fr;
+      gap: 50px; margin-bottom: 44px;
+    }
+    .footer-brand h3 {
+      font-family: var(--font-heading); font-size: 1.6rem; color: var(--white);
+      margin-bottom: 14px; letter-spacing: -0.3px;
+    }
+    .footer-brand h3 .gold {
+      background: linear-gradient(135deg, var(--gold), var(--gold-light));
+      -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+    }
+    .footer-brand p { margin-bottom: 10px; font-size: 0.92rem; line-height: 1.65; }
+    .footer-brand a { color: var(--gold-light); transition: var(--transition); font-weight: 500; }
+    .footer-brand a:hover { color: var(--gold); }
+    .footer-links h4 {
+      color: var(--white); font-size: 0.85rem; margin-bottom: 22px;
+      text-transform: uppercase; letter-spacing: 2px;
+      font-family: var(--font-body); font-weight: 700;
+    }
+    .footer-links ul li { margin-bottom: 11px; }
+    .footer-links ul li a {
+      transition: var(--transition); font-size: 0.9rem;
+      display: inline-flex; align-items: center; gap: 8px;
+    }
+    .footer-links ul li a i { color: var(--gold); font-size: 0.75rem; }
+    .footer-links ul li a:hover { color: var(--gold); padding-left: 6px; }
+    .footer-bottom {
+      text-align: center; padding: 26px 0;
+      border-top: 1px solid rgba(212, 175, 55, 0.1);
+      font-size: 0.85rem; color: var(--text-dim);
+    }
+
+    /* ============ BACK TO TOP ============ */
+    .back-to-top {
+      position: fixed; bottom: 30px; right: 30px;
+      width: 52px; height: 52px;
+      background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      color: var(--bg-deep); border-radius: 16px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 1.15rem; box-shadow: var(--shadow-gold);
+      opacity: 0; visibility: hidden; transition: var(--transition);
+      z-index: 900; border: none;
+    }
+    .back-to-top.show { opacity: 1; visibility: visible; }
+    .back-to-top:hover { transform: translateY(-5px); box-shadow: 0 18px 45px rgba(212, 175, 55, 0.5); }
+
+    /* ============ WHATSAPP FLOAT ============ */
+    .whatsapp-float {
+      position: fixed; bottom: 30px; left: 30px;
+      width: 58px; height: 58px; border-radius: 50%;
+      background: linear-gradient(135deg, #25d366, #1eb854);
+      color: var(--white); display: flex; align-items: center; justify-content: center;
+      font-size: 1.7rem; box-shadow: 0 10px 30px rgba(37, 211, 102, 0.5);
+      z-index: 999; transition: var(--transition);
+      animation: pulse-whatsapp 2.5s infinite;
+    }
+    .whatsapp-float:hover { transform: scale(1.12); }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 1100px) {
+      .hero-content h1 { font-size: 3.1rem; }
+    }
+    @media (max-width: 1024px) {
+      .hero .container, .about-grid, .signature-grid, .experience-grid, .contact-grid {
+        grid-template-columns: 1fr; gap: 50px;
+      }
+      .hero-content h1 { font-size: 2.8rem; }
+      .hero-image { max-width: 520px; margin: 0 auto; }
+      .signature-image { order: -1; max-width: 520px; margin: 0 auto; }
+      .about-image { max-width: 560px; margin: 0 auto; }
+      .footer-grid { grid-template-columns: 1fr 1fr; gap: 36px; }
+      .float-badge-1 { left: -10px; }
+      .float-badge-2 { right: -10px; }
+    }
+    @media (max-width: 900px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; align-items: center; justify-content: center; }
+      .nav-cta .btn-outline { display: none; }
+    }
+    @media (max-width: 768px) {
+      section { padding: 64px 0; }
+      .section-title { font-size: 2.1rem; }
+      .section-subtitle { font-size: 0.98rem; }
+      .hero { padding: 130px 0 70px; min-height: auto; }
+      .hero-content h1 { font-size: 2.3rem; }
+      .hero-content p { font-size: 1rem; }
+      .hero-buttons { flex-direction: column; }
+      .hero-buttons .btn { width: 100%; }
+      .menu-grid { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); }
+      .contact-form { padding: 32px 26px; }
+      .location-card { padding: 40px 28px; }
+      .location-info h2 { font-size: 1.7rem; }
+      .footer-grid { grid-template-columns: 1fr; gap: 32px; }
+      .final-cta h2 { font-size: 2rem; }
+      .final-cta .btn-group { flex-direction: column; align-items: stretch; }
+      .final-cta .btn-group .btn { width: 100%; }
+      .gallery-grid { grid-template-columns: repeat(2, 1fr); }
+      .float-badge { padding: 11px 14px; }
+      .float-badge .fb-icon { width: 36px; height: 36px; font-size: 0.95rem; }
+      .float-badge .fb-text .fb-value { font-size: 0.82rem; }
+    }
+    @media (max-width: 480px) {
+      .container { padding: 0 16px; }
+      .hero-content h1 { font-size: 1.9rem; letter-spacing: -0.8px; }
+      .section-title { font-size: 1.7rem; }
+      .about-text h2, .signature-content h2, .experience-text h2 { font-size: 1.9rem; }
+      .menu-grid { grid-template-columns: 1fr; }
+      .features-grid { grid-template-columns: 1fr; }
+      .steps-grid { grid-template-columns: 1fr; }
+      .gallery-grid { grid-template-columns: 1fr; }
+      .testimonials-grid { grid-template-columns: 1fr; }
+      .about-image, .signature-image, .experience-image { aspect-ratio: 4/3; }
+      .logo-text .main { font-size: 1.05rem; }
+      .logo-icon { width: 38px; height: 38px; font-size: 1rem; }
+      .whatsapp-float { width: 52px; height: 52px; font-size: 1.5rem; bottom: 20px; left: 20px; }
+      .back-to-top { width: 46px; height: 46px; bottom: 20px; right: 20px; }
+    }
+    ::selection { background: rgba(212, 175, 55, 0.3); color: var(--white); }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVBAR ========== -->
+  <header class="navbar" id="navbar">
+    <div class="container">
+      <a href="#home" class="logo">
+        <div class="logo-icon"><i class="fas fa-crown"></i></div>
+        <div class="logo-text">
+          <span class="main">Royal Broast</span>
+          <span class="sub">Al Khaleej</span>
+        </div>
+      </a>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#about">About</a></li>
+          <li><a href="#menu">Menu</a></li>
+          <li><a href="#why-us">Why Us</a></li>
+          <li><a href="#gallery">Gallery</a></li>
+          <li><a href="#faq">FAQ</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
+      <div class="nav-cta">
+        <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20ordering%20options." target="_blank" class="btn btn-whatsapp btn-sm">
+          <i class="fab fa-whatsapp"></i> Order Now
+        </a>
+        <button class="hamburger" id="hamburger" aria-label="Open menu">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile menu -->
+  <div class="overlay" id="overlay"></div>
+  <div class="mobile-menu" id="mobileMenu">
+    <button class="close-menu" id="closeMenu" aria-label="Close menu"><i class="fas fa-times"></i></button>
+    <a href="#home"><i class="fas fa-home"></i> Home</a>
+    <a href="#about"><i class="fas fa-info-circle"></i> About</a>
+    <a href="#menu"><i class="fas fa-utensils"></i> Menu</a>
+    <a href="#why-us"><i class="fas fa-star"></i> Why Us</a>
+    <a href="#gallery"><i class="fas fa-images"></i> Gallery</a>
+    <a href="#faq"><i class="fas fa-question-circle"></i> FAQ</a>
+    <a href="#contact"><i class="fas fa-envelope"></i> Contact</a>
+    <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20ordering%20options." target="_blank" class="btn btn-whatsapp">
+      <i class="fab fa-whatsapp"></i> Order on WhatsApp
+    </a>
+  </div>
+
+  <main>
+    <!-- ========== HERO ========== -->
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content reveal">
+          <div class="hero-badge">
+            <i class="fas fa-crown"></i> Royal Taste • Al Khaleej Tradition
+          </div>
+          <h1>Crispy, Juicy Broast, <span class="gold">Fit for Royalty</span></h1>
+          <p>Experience the finest broast and fast food at Royal Broast Al Khaleej in Block H, North Nazimabad Town, Karachi. A regal twist on Karachi's favorite flavors.</p>
+          <div class="hero-buttons">
+            <a href="#menu" class="btn btn-primary"><i class="fas fa-utensils"></i> View Menu</a>
+            <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order Now</a>
+          </div>
+          <div class="trust-indicators">
+            <div class="trust-item"><i class="fas fa-crown"></i> Royal Recipes</div>
+            <div class="trust-item"><i class="fas fa-fire"></i> Freshly Prepared</div>
+            <div class="trust-item"><i class="fas fa-drumstick-bite"></i> Crispy & Juicy</div>
+          </div>
+        </div>
+        <div class="hero-image reveal">
+          <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=900&q=80&auto=format&fit=crop" alt="Crispy and juicy broast served with fries" loading="eager">
+          <div class="float-badge float-badge-1">
+            <div class="fb-icon gold"><i class="fas fa-crown"></i></div>
+            <div class="fb-text">
+              <div class="fb-label">Signature</div>
+              <div class="fb-value">Royal Broast</div>
+            </div>
+          </div>
+          <div class="float-badge float-badge-2">
+            <div class="fb-icon crimson"><i class="fas fa-star"></i></div>
+            <div class="fb-text">
+              <div class="fb-label">Premium</div>
+              <div class="fb-value">Al Khaleej Taste</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== ABOUT ========== -->
+    <section id="about" class="about">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-image reveal">
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=900&q=80&auto=format&fit=crop" alt="Delicious broast pieces with dipping sauce" loading="lazy">
+          </div>
+          <div class="about-text reveal">
+            <span class="section-label"><i class="fas fa-info-circle"></i> About Us</span>
+            <h2>About <span class="gold">Royal Broast Al Khaleej</span></h2>
+            <p>At Royal Broast Al Khaleej, we bring a royal touch to Karachi's favorite fast food. Our broast is prepared using time-honored recipes with a rich, flavorful twist inspired by Al Khaleej traditions.</p>
+            <p>Located in Block H, North Nazimabad Town, Karachi, we take pride in serving freshly prepared broast, burgers, and fast food that reflects both premium quality and authentic Pakistani fast food culture.</p>
+            <p>Whether you're dining with family or ordering for a special gathering, our commitment to delicious flavors and warm hospitality ensures a memorable dining experience.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== SIGNATURE ========== -->
+    <section class="signature" id="signature">
+      <div class="container">
+        <div class="signature-grid">
+          <div class="signature-content reveal">
+            <span class="section-label"><i class="fas fa-crown"></i> Signature Dish</span>
+            <h2>Our Signature <span class="gold">Royal Broast</span></h2>
+            <p>Our signature broast is the crown jewel of our kitchen — a crispy, golden-brown masterpiece that's juicy and full of royal flavor.</p>
+            <ul>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Freshly prepared to order</li>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Crispy, golden coating</li>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Traditional Pakistani & Al Khaleej spices</li>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Tender, succulent meat inside</li>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Perfect with fries and signature dip</li>
+              <li><div class="check-icon"><i class="fas fa-check"></i></div> Served with fresh salad and sauces</li>
+            </ul>
+            <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20the%20Signature%20Royal%20Broast." target="_blank" class="btn btn-primary"><i class="fab fa-whatsapp"></i> Order Now</a>
+          </div>
+          <div class="signature-image reveal">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=900&q=80&auto=format&fit=crop" alt="Signature crispy broast with golden coating" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== MENU ========== -->
+    <section id="menu" class="menu">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-utensils"></i> Our Menu</span>
+          <h2 class="section-title">Royal <span class="gold">Delicacies</span></h2>
+          <p class="section-subtitle">Explore our delicious fast food items, prepared fresh and full of royal flavor.</p>
+        </div>
+        <div class="menu-grid">
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80&auto=format&fit=crop" alt="Signature Royal Broast with crispy coating" loading="lazy">
+              <span class="menu-card-badge">Best Seller</span>
+              <div class="menu-card-icon"><i class="fas fa-crown"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Signature Royal Broast</h3>
+              <p>Crispy, juicy broast served with fries and signature dip.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20Signature%20Royal%20Broast." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80&auto=format&fit=crop" alt="Chicken Broast pieces with sauce" loading="lazy">
+              <span class="menu-card-badge">Classic</span>
+              <div class="menu-card-icon"><i class="fas fa-drumstick-bite"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Chicken Broast</h3>
+              <p>Tender chicken broast with a crispy, flavorful coating.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20Chicken%20Broast." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format&fit=crop" alt="Juicy Beef Burger with fresh vegetables" loading="lazy">
+              <span class="menu-card-badge">Premium</span>
+              <div class="menu-card-icon"><i class="fas fa-hamburger"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Beef Burger</h3>
+              <p>Juicy beef patty with fresh vegetables and sauces.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20Beef%20Burger." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80&auto=format&fit=crop" alt="Crispy Chicken Burger" loading="lazy">
+              <span class="menu-card-badge">Popular</span>
+              <div class="menu-card-icon"><i class="fas fa-hamburger"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Chicken Burger</h3>
+              <p>Crispy chicken fillet with fresh lettuce and mayo.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20Chicken%20Burger." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80&auto=format&fit=crop" alt="Golden French Fries" loading="lazy">
+              <span class="menu-card-badge">Sides</span>
+              <div class="menu-card-icon"><i class="fas fa-french-fries"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>French Fries</h3>
+              <p>Crispy, golden french fries served hot.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20French%20Fries." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+
+          <div class="menu-card reveal">
+            <div class="menu-card-img">
+              <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80&auto=format&fit=crop" alt="Broast Combo Meal with fries and drink" loading="lazy">
+              <span class="menu-card-badge">Combo</span>
+              <div class="menu-card-icon"><i class="fas fa-utensils"></i></div>
+            </div>
+            <div class="menu-card-body">
+              <h3>Royal Broast Combo</h3>
+              <p>Broast, fries, and a soft drink — a complete royal meal.</p>
+              <span class="price-tag"><i class="fas fa-tag"></i> Price Available at Restaurant</span>
+              <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20order%20a%20Royal%20Broast%20Combo." target="_blank" class="btn btn-whatsapp btn-sm"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== WHY US ========== -->
+    <section id="why-us" class="why-us">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-star"></i> Why Choose Us</span>
+          <h2 class="section-title">The <span class="gold">Royal Difference</span></h2>
+          <p class="section-subtitle">What makes Royal Broast Al Khaleej a preferred choice for fast food in Karachi.</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-crown"></i></div>
+            <h3>Royal Taste</h3>
+            <p>Traditional Pakistani fast food flavors with a regal Al Khaleej twist.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-seedling"></i></div>
+            <h3>Freshly Prepared</h3>
+            <p>Food-focused preparation using fresh ingredients every day.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-scroll"></i></div>
+            <h3>Signature Recipe</h3>
+            <p>A classic broast experience inspired by Pakistani & Arabian food traditions.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-map-pin"></i></div>
+            <h3>Convenient Location</h3>
+            <p>Located in Block H, North Nazimabad Town, Karachi.</p>
+          </div>
+          <div class="feature-card reveal">
+            <div class="feature-icon"><i class="fas fa-mobile-alt"></i></div>
+            <h3>Easy Ordering</h3>
+            <p>Customers can contact the restaurant directly through WhatsApp or phone.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== HOW IT WORKS ========== -->
+    <section id="how-it-works" class="how-it-works">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-route"></i> How It Works</span>
+          <h2 class="section-title">Simple <span class="gold">Ordering Process</span></h2>
+          <p class="section-subtitle">Ordering your favorite broast is simple and convenient.</p>
+        </div>
+        <div class="steps-grid">
+          <div class="step-card reveal">
+            <div class="step-number">01</div>
+            <h3>Choose Your Meal</h3>
+            <p>Explore our broast, burgers, and fast food options.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">02</div>
+            <h3>Contact Us</h3>
+            <p>Call or message us on WhatsApp to place your order.</p>
+          </div>
+          <div class="step-card reveal">
+            <div class="step-number">03</div>
+            <h3>Enjoy Your Royal Meal</h3>
+            <p>Enjoy delicious, freshly prepared fast food fit for royalty.</p>
+          </div>
+        </div>
+        <div class="text-center" style="margin-top: 44px;">
+          <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== GALLERY ========== -->
+    <section id="gallery" class="gallery">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-images"></i> Gallery</span>
+          <h2 class="section-title">A Glimpse of <span class="gold">Royal Delights</span></h2>
+          <p class="section-subtitle">A visual taste of our delicious fast food dishes and royal experience.</p>
+        </div>
+        <div class="gallery-grid">
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80&auto=format&fit=crop" alt="Crispy broast pieces" loading="lazy">
+          </div>
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1562967914-608f82629710?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1562967914-608f82629710?w=600&q=80&auto=format&fit=crop" alt="Broast with dipping sauce" loading="lazy">
+          </div>
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1571091718767-18b5b1457add?w=600&q=80&auto=format&fit=crop" alt="Juicy beef burger" loading="lazy">
+          </div>
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?w=600&q=80&auto=format&fit=crop" alt="Crispy chicken burger" loading="lazy">
+          </div>
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1573080496219-bb080dd4f877?w=600&q=80&auto=format&fit=crop" alt="Golden french fries" loading="lazy">
+          </div>
+          <div class="gallery-item reveal" data-img="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=1200&q=80&auto=format&fit=crop">
+            <img src="https://images.unsplash.com/photo-1626082927389-6cd097cdc6ec?w=600&q=80&auto=format&fit=crop" alt="Broast combo meal" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+      <button class="lightbox-close" id="lightboxClose"><i class="fas fa-times"></i></button>
+      <img src="" alt="Gallery image enlarged" id="lightboxImg">
+    </div>
+
+    <!-- ========== EXPERIENCE ========== -->
+    <section id="experience" class="experience">
+      <div class="container">
+        <div class="experience-grid">
+          <div class="experience-image reveal">
+            <img src="https://media.istockphoto.com/id/2060423071/photo/close-up-of-a-hand-bringing-burger-and-french-fries-to-a-man-in-a-blurry-background.webp?a=1&b=1&s=612x612&w=0&k=20&c=3cUzkRy_pRCSqtP1svECFq-UePaGYrUN8iI4tcXADOk=" alt="Fast food dining experience" loading="lazy">
+          </div>
+          <div class="experience-text reveal">
+            <span class="section-label"><i class="fas fa-utensils"></i> The Experience</span>
+            <h2>A Taste of <span class="gold">Royal Karachi</span></h2>
+            <p>Step into Royal Broast Al Khaleej and experience the warmth of Karachi's fast food culture with a royal twist. Our restaurant offers a comfortable, family-friendly environment where you can enjoy crispy broast, burgers, and other fast food favorites.</p>
+            <p>From the golden coating to the juicy tenderness of our broast, every detail is designed to give you a genuine taste of tradition with a premium touch. Whether you're a longtime lover of broast or trying it for the first time, we welcome you to savor the royal flavors of Karachi.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== LOCATION ========== -->
+    <section id="location" class="location">
+      <div class="container">
+        <div class="location-card reveal">
+          <div class="location-info">
+            <h2><i class="fas fa-map-marker-alt"></i> Royal Broast Al Khaleej</h2>
+            <p>Block H, North Nazimabad Town, Karachi, Pakistan</p>
+          </div>
+          <a href="https://www.google.com/maps/search/?api=1&query=Royal+Broast+Al+Khaleej,+Block+H,+North+Nazimabad+Town,+Karachi,+Pakistan" target="_blank" class="btn btn-primary">
+            <i class="fas fa-directions"></i> Get Directions
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== CONTACT (NO IMAGES) ========== -->
+    <section id="contact" class="contact">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-envelope"></i> Get In Touch</span>
+          <h2 class="section-title">Contact <span class="gold">Royal Broast</span></h2>
+          <p class="section-subtitle">Get in touch for orders, inquiries, or directions.</p>
+        </div>
+        <div class="contact-grid">
+          <!-- Contact Info -->
+          <div class="reveal">
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+              <div>
+                <h4>Phone</h4>
+                <a href="tel:+923221213999">0322 1213999</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fab fa-whatsapp"></i></div>
+              <div>
+                <h4>WhatsApp</h4>
+                <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20ordering%20options." target="_blank">+923221213999</a>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+              <div>
+                <h4>Address</h4>
+                <p>Block H, North Nazimabad Town, Karachi, Pakistan</p>
+              </div>
+            </div>
+            <div class="contact-info-item">
+              <div class="contact-icon"><i class="fas fa-clock"></i></div>
+              <div>
+                <h4>Opening Hours</h4>
+                <p>Please contact us for current opening hours.</p>
+              </div>
+            </div>
+          </div>
+          <!-- Contact Form -->
+          <div class="contact-form reveal">
+            <h3>Send us a message</h3>
+            <form id="whatsappForm">
+              <div class="form-group">
+                <label for="name">Name</label>
+                <input type="text" id="name" placeholder="Your name" required>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone</label>
+                <input type="tel" id="phone" placeholder="Your phone number" required>
+              </div>
+              <div class="form-group">
+                <label for="message">Message</label>
+                <textarea id="message" placeholder="Your message or order details" required></textarea>
+              </div>
+              <button type="submit" class="btn btn-whatsapp btn-block">
+                <i class="fab fa-whatsapp"></i> Send on WhatsApp
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FAQ ========== -->
+    <section id="faq" class="faq">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-question-circle"></i> FAQ</span>
+          <h2 class="section-title">Frequently Asked <span class="gold">Questions</span></h2>
+          <p class="section-subtitle">Find answers to common questions about our restaurant and food.</p>
+        </div>
+        <div class="faq-list">
+          <div class="faq-item reveal">
+            <button class="faq-question">What type of food does Royal Broast Al Khaleej serve? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">We serve delicious fast food including our signature Royal Broast, chicken broast, beef burgers, chicken burgers, french fries, and combo meals.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">Where is Royal Broast Al Khaleej located? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">We are located at Block H, North Nazimabad Town, Karachi, Pakistan.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">How can I place an order? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">You can contact us through WhatsApp or phone. Simply click the WhatsApp button or call us at 0322 1213999.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">Can I contact the restaurant on WhatsApp? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, you can reach us on WhatsApp at +923221213999. Click the WhatsApp button anywhere on this page to start a chat.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">Do you offer broast with fries? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Yes, broast is traditionally served with fries and dip. Please contact us directly to ask about available menu combinations and today's options.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">How can I get directions? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Click the "Get Directions" button in the Location section to open Google Maps with our address.</div>
+          </div>
+          <div class="faq-item reveal">
+            <button class="faq-question">How can I confirm today's menu or availability? <i class="fas fa-chevron-down"></i></button>
+            <div class="faq-answer">Please contact us directly via WhatsApp or phone to confirm today's menu and availability.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== TESTIMONIALS ========== -->
+    <section id="testimonials" class="testimonials">
+      <div class="container">
+        <div class="section-header reveal">
+          <span class="section-label"><i class="fas fa-quote-left"></i> Testimonials</span>
+          <h2 class="section-title">What Our <span class="gold">Customers Experience</span></h2>
+          <p class="section-subtitle">Neutral, experience-focused statements about our restaurant.</p>
+        </div>
+        <div class="testimonials-grid">
+          <div class="testimonial-card reveal">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Delicious Pakistani fast food with a royal twist in a classic Karachi setting."</p>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"A food-focused destination for customers looking for premium broast and fast food."</p>
+          </div>
+          <div class="testimonial-card reveal">
+            <div class="testimonial-stars">
+              <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p>"Crispy, juicy broast served with warmth, tradition, and a royal touch."</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========== FINAL CTA ========== -->
+    <section class="final-cta">
+      <div class="container">
+        <h2 class="reveal">Ready for a <span class="gold">Royal Broast</span> Experience?</h2>
+        <p class="reveal">Visit Royal Broast Al Khaleej in Block H, North Nazimabad Town, or contact us directly to ask about today's menu and ordering options.</p>
+        <div class="btn-group reveal">
+          <a href="tel:+923221213999" class="btn btn-outline"><i class="fas fa-phone-alt"></i> Call Now</a>
+          <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20ordering%20options." target="_blank" class="btn btn-whatsapp"><i class="fab fa-whatsapp"></i> WhatsApp Us</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ========== FOOTER ========== -->
+  <footer>
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>Royal Broast <span class="gold">Al Khaleej</span></h3>
+          <p>Block H, North Nazimabad Town, Karachi, Pakistan</p>
+          <p>Phone: <a href="tel:+923221213999">0322 1213999</a></p>
+          <p>WhatsApp: <a href="https://wa.me/923221213999" target="_blank">+923221213999</a></p>
+        </div>
+        <div class="footer-links">
+          <h4>Navigation</h4>
+          <ul>
+            <li><a href="#home"><i class="fas fa-chevron-right"></i> Home</a></li>
+            <li><a href="#about"><i class="fas fa-chevron-right"></i> About</a></li>
+            <li><a href="#menu"><i class="fas fa-chevron-right"></i> Menu</a></li>
+            <li><a href="#gallery"><i class="fas fa-chevron-right"></i> Gallery</a></li>
+            <li><a href="#faq"><i class="fas fa-chevron-right"></i> FAQ</a></li>
+            <li><a href="#contact"><i class="fas fa-chevron-right"></i> Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-links">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="#why-us"><i class="fas fa-chevron-right"></i> Why Us</a></li>
+            <li><a href="#how-it-works"><i class="fas fa-chevron-right"></i> How It Works</a></li>
+            <li><a href="#location"><i class="fas fa-chevron-right"></i> Location</a></li>
+            <li><a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank"><i class="fab fa-whatsapp"></i> Order on WhatsApp</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>© 2026 Royal Broast Al Khaleej. All Rights Reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button class="back-to-top" id="backToTop" aria-label="Back to top"><i class="fas fa-arrow-up"></i></button>
+
+  <!-- WhatsApp Float -->
+  <a href="https://wa.me/923221213999?text=Hello%20Royal%20Broast%20Al%20Khaleej%2C%20I%20would%20like%20to%20know%20more%20about%20your%20menu%20and%20ordering%20options." target="_blank" class="whatsapp-float" aria-label="Chat on WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+
+  <!-- ========== JAVASCRIPT ========== -->
+  <script>
+    (function() {
+      'use strict';
+
+      // --- Sticky Navbar & Active Nav ---
+      const navbar = document.getElementById('navbar');
+      const navLinks = document.querySelectorAll('.nav-links a');
+      const sections = document.querySelectorAll('section[id]');
+      const backToTop = document.getElementById('backToTop');
+
+      window.addEventListener('scroll', function() {
+        if (window.scrollY > 50) {
+          navbar.classList.add('scrolled');
+        } else {
+          navbar.classList.remove('scrolled');
+        }
+
+        // Active nav based on scroll position
+        let current = '';
+        sections.forEach(section => {
+          const sectionTop = section.offsetTop - 140;
+          if (window.scrollY >= sectionTop) {
+            current = section.getAttribute('id');
+          }
+        });
+        navLinks.forEach(link => {
+          link.classList.remove('active');
+          if (link.getAttribute('href') === '#' + current) {
+            link.classList.add('active');
+          }
+        });
+
+        // Back to top visibility
+        if (window.scrollY > 400) {
+          backToTop.classList.add('show');
+        } else {
+          backToTop.classList.remove('show');
+        }
+      });
+
+      // --- Mobile Menu ---
+      const hamburger = document.getElementById('hamburger');
+      const mobileMenu = document.getElementById('mobileMenu');
+      const closeMenu = document.getElementById('closeMenu');
+      const overlay = document.getElementById('overlay');
+
+      function openMobileMenu() {
+        mobileMenu.classList.add('open');
+        overlay.classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
+
+      function closeMobileMenu() {
+        mobileMenu.classList.remove('open');
+        overlay.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      hamburger.addEventListener('click', openMobileMenu);
+      closeMenu.addEventListener('click', closeMobileMenu);
+      overlay.addEventListener('click', closeMobileMenu);
+      document.querySelectorAll('.mobile-menu a').forEach(link => {
+        link.addEventListener('click', closeMobileMenu);
+      });
+
+      // --- Smooth Scrolling ---
+      document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+          const href = this.getAttribute('href');
+          if (href === '#') return;
+          const target = document.querySelector(href);
+          if (target) {
+            e.preventDefault();
+            const offsetTop = target.offsetTop - 80;
+            window.scrollTo({ top: offsetTop, behavior: 'smooth' });
+          }
+        });
+      });
+
+      // --- FAQ Accordion ---
+      const faqQuestions = document.querySelectorAll('.faq-question');
+      faqQuestions.forEach(question => {
+        question.addEventListener('click', function() {
+          const answer = this.nextElementSibling;
+          const isOpen = answer.classList.contains('show');
+
+          // Close all
+          document.querySelectorAll('.faq-answer').forEach(ans => ans.classList.remove('show'));
+          document.querySelectorAll('.faq-question').forEach(q => q.classList.remove('active'));
+
+          // Open current if was closed
+          if (!isOpen) {
+            answer.classList.add('show');
+            this.classList.add('active');
+          }
+        });
+      });
+
+      // --- Gallery Lightbox ---
+      const galleryItems = document.querySelectorAll('.gallery-item');
+      const lightbox = document.getElementById('lightbox');
+      const lightboxImg = document.getElementById('lightboxImg');
+      const lightboxClose = document.getElementById('lightboxClose');
+
+      galleryItems.forEach(item => {
+        item.addEventListener('click', function() {
+          const imgSrc = this.getAttribute('data-img');
+          lightboxImg.src = imgSrc;
+          lightbox.classList.add('active');
+          document.body.style.overflow = 'hidden';
+        });
+      });
+
+      function closeLightbox() {
+        lightbox.classList.remove('active');
+        document.body.style.overflow = '';
+      }
+
+      lightboxClose.addEventListener('click', closeLightbox);
+      lightbox.addEventListener('click', function(e) {
+        if (e.target === lightbox) closeLightbox();
+      });
+
+      // --- Contact Form → WhatsApp ---
+      const whatsappForm = document.getElementById('whatsappForm');
+      whatsappForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+        const name = document.getElementById('name').value.trim();
+        const phone = document.getElementById('phone').value.trim();
+        const message = document.getElementById('message').value.trim();
+
+        if (!name || !phone || !message) {
+          alert('Please fill in all fields.');
+          return;
+        }
+
+        const whatsappNumber = '923221213999';
+        const text = `Hello Royal Broast Al Khaleej,%0A%0AMy name is ${encodeURIComponent(name)}.%0APhone: ${encodeURIComponent(phone)}%0AMessage: ${encodeURIComponent(message)}`;
+        const url = `https://wa.me/${whatsappNumber}?text=${text}`;
+        window.open(url, '_blank');
+      });
+
+      // --- Back to Top ---
+      backToTop.addEventListener('click', function() {
+        window.scrollTo({ top: 0, behavior: 'smooth' });
+      });
+
+      // --- Scroll Reveal Animation ---
+      const revealElements = document.querySelectorAll('.reveal');
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+
+      revealElements.forEach(el => observer.observe(el));
+
+      // --- Close mobile menu on resize ---
+      window.addEventListener('resize', function() {
+        if (window.innerWidth > 900 && mobileMenu.classList.contains('open')) {
+          closeMobileMenu();
+        }
+      });
+
+      // --- Accessibility: Close lightbox / menu on Escape ---
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+          if (lightbox.classList.contains('active')) closeLightbox();
+          if (mobileMenu.classList.contains('open')) closeMobileMenu();
+        }
+      });
+
+    })();
+  </script>
+</body>
+</html>
